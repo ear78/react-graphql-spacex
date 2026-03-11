@@ -1,0 +1,101 @@
+.LaunchItem {
+  border: 1px solid #000000;
+  border-radius: 8px;
+  background: #1a1a1a;
+  padding: 2rem;
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+  }
+
+  &.Failed:hover {
+    border: 1px solid crimson;
+  }
+
+  &.Success:hover {
+    border: 1px solid green;
+  }
+
+  .Details {
+    margin-bottom: 1rem;
+  }
+
+  img {
+    width: auto;
+    height: 75px;
+    margin-bottom: 20px;
+    border: 1px solid var(--grey-500);
+    border-radius: 3px;
+    padding: 10px;
+    aspect-ratio: 1/1;
+  }
+
+  h5 {
+    color: var(--teal-500);
+    text-transform: uppercase;
+    font-size: 1rem;
+    margin: 0 0 1rem;
+
+    span {
+      color: var(--grey-400);
+      text-transform: none;
+      font-weight: 300;
+    }
+  }
+
+  .ItemTitle {
+    color: var(--grey-400);
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 0 0 .25rem;
+
+    span {
+      text-transform: none;
+      font-weight: 300;
+    }
+  }
+
+  .ItemButton {
+    background: #111111;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.875rem 1.5rem;
+
+    @media (hover: hover) {
+      &:hover {
+        border: 1px solid var(--teal-500);
+      }
+    }
+  }
+}
+
+.failed {
+  &::after {
+    content: "";
+    display: inline-block;
+    height: 1rem;
+    width: 1rem;
+    background-color: crimson;
+    margin-left: 10px;
+    vertical-align: middle;
+    border-radius: 50%;
+    margin-bottom: 2px;
+  }
+}
+
+.success {
+  &::after {
+    content: "";
+    display: inline-block;
+    height: 1rem;
+    width: 1rem;
+    margin-left: 10px;
+    vertical-align: middle;
+    background-color: green;
+    border-radius: 50%;
+    margin-bottom: 2px;
+  }
+}

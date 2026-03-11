@@ -1,0 +1,11 @@
+.Svg {
+  margin-left: 20px;
+  width: 250px;
+}
+
+@media (min-width: 768px) {
+  .Svg {
+    margin-left: 40px;
+    width: 500px;
+  }
+}
