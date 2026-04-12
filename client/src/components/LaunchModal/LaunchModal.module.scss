@@ -17,29 +17,42 @@
   display: flex;
 
   img {
-    max-width: 150px;
+    max-width: 125px;
+    max-height: 125px;
     aspect-ratio: 1/1;
   }
 
   .TopDetails {
     padding-left: 30px;
   }
+
+  @media (width >=768px) {
+    max-width: 150px;
+    max-height: auto;
+  }
 }
 
 .InnerCard {
   position: relative;
-  width: 60%;
-  padding: 50px;
+  overflow-y: auto;
+  width: 90%;
+  padding: 1rem;
   max-height: 80vh;
   background: var(--white);
   margin: 0 auto;
   border-radius: 8px;
   color: var(--black);
+  box-sizing: border-box;
 
   &.Loading {
     padding-top: 45%;
     padding-top: 30vh;
     padding-bottom: 30vh;
+  }
+
+  @media (width >=768px) {
+    width: 60%;
+    padding: 3rem;
   }
 }
 
@@ -77,6 +90,7 @@
     margin-bottom: 0;
   }
 }
+
 .BottomContainer {
   padding-top: 20px;
   border-top: 1px solid;

@@ -1,9 +1,9 @@
 
 interface FilterOptionProps {
-  option: { value: string; label: string };
+  option: string;
 }
 function FilterOption(props: FilterOptionProps) {
-  return <option value={props.option.value}>{props.option.label}</option>;
+  return <option value={props.option}>{props.option}</option>;
 }
 
 export default FilterOption;

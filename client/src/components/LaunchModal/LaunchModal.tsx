@@ -4,6 +4,7 @@ import { useQuery } from "@apollo/client/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import Spinner from "@/components/Spinner/Spinner.tsx";
+import { useEffect } from "react";
 interface LaunchModalProps {
   click: () => void;
   setModal: boolean;
@@ -53,6 +54,14 @@ const LAUNCH_QUERY = gql`
 `;
 
 const LaunchModal = ({ click, setModal, selectedLaunch }: LaunchModalProps) => {
+
+  useEffect(() => {
+    document.body.style.overflow = setModal ? "hidden" : "auto";
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [setModal]);
+  
   const flight_number = selectedLaunch;
   const { loading, error, data } = useQuery<LaunchData>(LAUNCH_QUERY, {
     variables: { flight_number },
@@ -107,14 +116,17 @@ const LaunchModal = ({ click, setModal, selectedLaunch }: LaunchModalProps) => {
             <h3>Launch Details</h3>
             <p className={styles.Details}>
               <span className={styles.DetailsTitle}>Details:</span>{" "}
+              <br/>
               {data.launch.details}
             </p>
             <p className={styles.Details}>
               <span className={styles.DetailsTitle}>Site Launch Location:</span>{" "}
+              <br/>
               {data.launch.launch_site.site_name_long}
             </p>
             <p className={styles.Details}>
               <span className={styles.DetailsTitle}>Launch Status:</span>{" "}
+              <br/>
               {data.launch.launch_success ? "Success" : "Failed"}
               <span
                 className={`${data.launch.launch_success ? styles.success : styles.failed}`}
@@ -122,6 +134,7 @@ const LaunchModal = ({ click, setModal, selectedLaunch }: LaunchModalProps) => {
             </p>
             <p className={styles.Details}>
               <span className={styles.DetailsTitle}>Launch Date:</span>{" "}
+              <br/>
               {new Date(data.launch.launch_date_local).toLocaleString()}
             </p>
           </div>

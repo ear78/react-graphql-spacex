@@ -7,22 +7,20 @@ interface FilterRowProps {
 }
 
 function FilterRow(props: FilterRowProps) {
-  const options = {
-    launches: [
+    const launches = [
       "All Launches",
       "Failed Launches",
       "Successful Launches",
       "Falcon 1",
       "Falcon 9",
       "Falcon Heavy",
-    ],
-  };
+    ];
 
   return (
     <div className={`${props.bootClass} ${styles.FilterRow}`}>
       {/* <div className="col-12 col-md-6"> */}
         <FilterDropdown
-          data={options.launches}
+          data={launches}
           labelFor="launch-filter"
           labelText="Filter Launches"
           change={props.change}
