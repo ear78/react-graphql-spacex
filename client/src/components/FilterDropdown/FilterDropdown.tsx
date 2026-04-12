@@ -1,9 +1,16 @@
-import { Fragment } from "react";
+import React, { Fragment } from "react";
 import styles from "./FilterDropdown.module.scss";
 import FilterOption from "@/components/FilterOption/FilterOption.tsx";
 
-function FilterDropdown(props) {
-  const option = props.data.map((item: any, i: number) => {
+interface FilterDropdownProps {
+  data: { value: string; label: string }[];
+  labelFor: string;
+  labelText: string;
+  change: (event: React.ChangeEvent<HTMLSelectElement>) => void;
+}
+  
+function FilterDropdown(props: FilterDropdownProps) {
+  const option = props.data.map((item, i: number) => {
     return <FilterOption key={i} option={item} />;
   });
 
