@@ -4,6 +4,12 @@
 
 [[redirects]]
   force = true
+  from = "/graphql"
+  status = 200
+  to = "/.netlify/functions/graphql"
+
+[[redirects]]
+  force = true
   from = "/graphql/*"
   status = 200
   to = "/.netlify/functions/graphql/:splat"

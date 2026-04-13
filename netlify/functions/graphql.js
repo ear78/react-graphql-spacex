@@ -6,6 +6,8 @@ const schema = require("../../schema");
 
 const graphql = express();
 graphql.use(cors());
+graphql.use(express.json());
+graphql.use(express.urlencoded({ extended: true }));
 
 graphql.use("/", graphqlHTTP({
     schema,
