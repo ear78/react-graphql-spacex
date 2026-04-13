@@ -1,0 +1,13 @@
+.Launches {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+
+  @media (width >= 640px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  @media (width >= 768px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
