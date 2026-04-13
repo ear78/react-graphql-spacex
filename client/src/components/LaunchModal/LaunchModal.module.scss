@@ -15,21 +15,23 @@
 
 .TopContainer {
   display: flex;
+  align-items: center;
 
   img {
     max-width: 125px;
     max-height: 125px;
     aspect-ratio: 1/1;
+
+    @media (width >=768px) {
+      max-width: 150px;
+      max-height: auto;
+    }
   }
 
   .TopDetails {
     padding-left: 30px;
   }
 
-  @media (width >=768px) {
-    max-width: 150px;
-    max-height: auto;
-  }
 }
 
 .InnerCard {
@@ -51,6 +53,11 @@
   }
 
   @media (width >=768px) {
+    width: 80%;
+    padding: 2rem;
+  }
+
+  @media (width >=1024px) {
     width: 60%;
     padding: 3rem;
   }
