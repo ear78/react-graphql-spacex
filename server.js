@@ -2,7 +2,6 @@ const express = require("express");
 const cors = require("cors");
 const { graphqlHTTP } = require("express-graphql");
 const schema = require("./schema");
-const path = require("path");
 
 const app = express();
 app.use(cors());
@@ -14,12 +13,6 @@ app.use(
     graphiql: true,
   }),
 );
-
-// app.use(express.static('public'))
-
-// app.get('*', (req, res) => {
-//   res.sendFile(__dirname, 'public', 'index.html')
-// })
 
 const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => console.log(`Server started on ${PORT}`));
