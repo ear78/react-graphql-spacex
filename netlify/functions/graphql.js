@@ -1,6 +1,6 @@
-import express from "express";
+const express = require("express");
 const cors = require("cors");
-import serverless from "serverless-http";
+const serverless = require("serverless-http");
 const { graphqlHTTP } = require("express-graphql");
 const schema = require("../../schema");
 
@@ -12,4 +12,4 @@ graphql.use("/graphql", graphqlHTTP({
     graphiql: true,
   }));
 
-export const handler = serverless(graphql);
+module.exports.handler = serverless(graphql);
