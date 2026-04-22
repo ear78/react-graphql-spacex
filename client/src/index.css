@@ -4,10 +4,11 @@
 
   --grey-400: #909090;
   --grey-500: #808080;
+  --grey-900: #1a1a1a;
 
   --teal-500: #009a9a;
 
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
